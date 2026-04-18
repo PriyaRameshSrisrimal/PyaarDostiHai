@@ -116,7 +116,7 @@
   ::-webkit-scrollbar-track{background:var(--ivory)}
   ::-webkit-scrollbar-thumb{background:var(--gold)}
 
-  .hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:10px;letter-spacing:3px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeup 2s infinite}
+  .hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:10px;letter-spacing:3px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeup 2s infinite;z-index:100}
   .hero-scroll::after{content:'';display:block;width:1px;height:40px;background:rgba(255,255,255,.4)}
 
   @keyframes fadeup{0%,100%{opacity:.4}50%{opacity:.9}}
@@ -252,7 +252,7 @@
   .event-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;font-weight:600;color:var(--crimson);text-align:center}
   .event-meta{font-size:12px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin:6px 0 12px}
   .event-venue{font-size:13px;color:var(--muted);font-weight:500}
-  .event-desc{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,20px);font-style:italic;font-weight:600;color:#001F5B;line-height:1.7;margin-top:8px}
+  .event-desc{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,20px);font-style:italic;font-weight:600;color:#001F5B;line-height:1.7;margin-top:8px;text-align:center}
   .event-link{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--crimson);text-decoration:none;border-bottom:1px solid var(--gold-light)}
   .event-link:hover{color:var(--gold)}
 
@@ -602,7 +602,9 @@
     .swastik-logo{width:min(220px,55vw);height:min(220px,55vw)}
     .shree-img{width:min(260px,60vw)}
     .mobile-br{display:inline}
+    .hero-scroll{bottom:70px}
     .mobile-margin-fix{margin-top:-40px}
+    .inv-family strong{white-space:nowrap; font-size: clamp(18px, 4.5vw, 24px);}
     .side-logo{width:75px;height:75px;top:calc(50% - 40px)}
     .side-logo-left{right:calc(50% + 80px)}
     .side-logo-right{left:calc(50% + 80px)}
@@ -691,7 +693,7 @@
     <span class="inv-name-script">Riddhi</span>
     <div class="inv-family">
     <em>Daughter of</em><br/>
-    <strong>Mrs. Priya Ramesh Srisrimal</strong>
+    <strong>Priya Ramesh Srisrimal</strong>
     </div>
     <div class="inv-names" style="margin: 5px 0 15px 0; display: flex; justify-content: center; align-items: center;">
       <span style="font-family: 'Playfair Display', serif; color: var(--gold); font-size: 0.6em; letter-spacing: 2px;">&amp;</span>
@@ -701,7 +703,7 @@
   </div>
   <div class="inv-family">
     <em>Son of</em><br/>
-    <strong>Mrs. Urmila Patel &amp; Mr. Jayanti Patel</strong>
+    <strong>Smt. Urmila Ji &amp; Shri. Jayanti Bhai Patel</strong>
   </div>
   <div class="inv-divider"></div>
   <div class="inv-family" style="font-variant-numeric:lining-nums">
