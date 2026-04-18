@@ -112,10 +112,14 @@
   }
 
   /* ── SCROLLBAR ── */
-
   ::-webkit-scrollbar{width:4px}
   ::-webkit-scrollbar-track{background:var(--ivory)}
   ::-webkit-scrollbar-thumb{background:var(--gold)}
+
+  .hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:10px;letter-spacing:3px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeup 2s infinite}
+  .hero-scroll::after{content:'';display:block;width:1px;height:40px;background:rgba(255,255,255,.4)}
+
+  @keyframes fadeup{0%,100%{opacity:.4}50%{opacity:.9}}
 
   /* ── MUSIC BTN ── */
   #music-btn{position:fixed;top:18px;right:18px;z-index:999;background:var(--crimson);border:none;color:#fff;padding:10px 14px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s;box-shadow:0 4px 12px rgba(0,0,0,.15)}
@@ -193,7 +197,7 @@
   .side-logo{position:absolute;top:calc(50% - 60px);transform:translateY(-50%);width:min(95px,15vw);height:min(95px,15vw);object-fit:contain;z-index:3;filter:drop-shadow(0 2px 6px rgba(232,82,26,.3))}
   .side-logo-left{right:calc(50% + min(125px,20vw))}
   .side-logo-right{left:calc(50% + min(125px,20vw))}
-  .swastik-logo{width:260px;height:260px;color:var(--gold-light);filter:drop-shadow(0 0 18px rgba(255,255,255,.6));position:absolute;top:calc(50% - 60px);left:50%;transform:translate(-50%,-50%);z-index:3}
+  .swastik-logo{width:320px;height:320px;color:var(--gold-light);filter:drop-shadow(0 0 18px rgba(255,255,255,.6));position:absolute;top:calc(50% - 60px);left:50%;transform:translate(-50%,-50%);z-index:3}
   .ganesh-calligraphy{width:auto;height:auto;color:#FFFFFF;font-family:'Playfair Display',serif;letter-spacing:1px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.4))}
   .ganesh-calligraphy svg{width:clamp(300px,70vw,600px);height:auto}
   .shree-img{width:260px;height:auto;mix-blend-mode:multiply;filter:drop-shadow(0 3px 8px rgba(232,82,26,.3));position:absolute;top:calc(50% - 10px);left:50%;transform:translateX(-50%);z-index:3}
@@ -677,6 +681,7 @@
       <img src="shree.png" alt="Shree" class="shree-img">
     </div>
   </div>
+  <div class="hero-scroll">Scroll</div>
 </section>
 
 <!-- INVITATION -->
