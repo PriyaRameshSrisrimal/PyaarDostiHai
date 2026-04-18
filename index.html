@@ -233,7 +233,7 @@
   .inv-divider{color:var(--gold);font-size:24px;margin:8px 0}
 
   /* ──────────── EVENTS ──────────── */
-  #events{padding:40px 20px 80px;background:transparent;text-align:center}
+  #events{padding:10px 20px 80px;background:transparent;text-align:center}
   .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:900px;margin:40px auto 0;text-align:left}
   .event-card{
     background:rgba(255,235,220,.92);backdrop-filter:blur(14px);
@@ -249,6 +249,7 @@
   }
   .event-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,31,91,.18)}
   .event-icon{font-size:28px;margin-bottom:12px;display:block}
+  .event-date{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.5vw,20px);font-variant-numeric:lining-nums;color:var(--gold);margin-bottom:8px;text-align:center}
   .event-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;font-weight:600;color:var(--crimson);text-align:center}
   .event-meta{font-size:12px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin:6px 0 12px}
   .event-venue{font-size:13px;color:var(--muted);font-weight:500}
@@ -301,48 +302,6 @@
   .couple-story{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--muted);max-width:480px;margin:24px auto 0;line-height:1.8}
   .tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
   .tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border:1px solid var(--gold-light);color:var(--muted);border-radius:20px}
-
-  /* ──────────── GALLERY ──────────── */
-  #gallery{padding:80px 20px;background:var(--ivory-dark);text-align:center;overflow:hidden}
-  .carousel-container{
-    position:relative;
-    max-width:600px;
-    margin:40px auto 0;
-    aspect-ratio:1;
-    overflow:hidden;
-    border:1px solid rgba(232,82,26,.2);
-    border-radius:8px;
-  }
-  .carousel-track{
-    display:flex;
-    transition:transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    height:100%;
-  }
-  .carousel-img{
-    min-width:100%;
-    aspect-ratio:1;
-    object-fit:cover;
-    height:100%;
-  }
-  .carousel-nav{
-    position:absolute;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:8px;
-    z-index:2;
-  }
-  .carousel-dot{
-    width:8px;height:8px;
-    border-radius:50%;
-    background:rgba(232,82,26,.4);
-    cursor:pointer;
-    transition:background .3s;
-  }
-  .carousel-dot.active{
-    background:var(--gold);
-  }
 
   /* ──────────── KNOW ──────────── */
   #know{padding:80px 20px;background:rgba(0,31,91,.88);text-align:center}
@@ -707,7 +666,8 @@
   </div>
   <div class="inv-divider"></div>
   <div class="inv-family" style="font-variant-numeric:lining-nums">
-    <strong style="font-weight: 800; font-family: 'Jost', sans-serif;">Date: 13 - 14 December 2026</strong>
+    <strong style="font-weight: 800; font-family: 'Jost', sans-serif;">Date: 13 - 14 December 2026</strong><br/>
+    <strong style="font-weight: 800; font-family: 'Jost', sans-serif;">Vadodara</strong>
   </div>
   
 </section>
@@ -721,17 +681,20 @@
 
     <div class="event-card">
       <!-- <span class="event-icon">🪷 Swagat 🪷</span> -->
+      <div class="event-date">13 Dec</div>
       <div class="event-name" style="font-size: 34px;">🪷 Swagat 🪷</div>
       <div class="event-desc">A warm welcome to our loved ones as we begin the festivities</div>
     </div>
 
     <div class="event-card">
       <!-- <span class="event-icon">Sangeet  🎶</span> -->
+      <div class="event-date">13 Dec</div>
       <div class="event-name" style="font-size: 34px;">Sangeet  🎶</div>
       <div class="event-desc">Jab pyaar ho filmy toh Sangeet bhi blockbuster hoga </div>
     </div>
 
     <div class="event-card">
+      <div class="event-date">14 Dec</div>
       <div class="event-name" style="font-size: 34px;">Shaadi - <span style="font-size: 1.2em;">2</span> States <img src="infinity.jpeg" style="height: 1em; vertical-align: middle; margin-left: 4px;"> </div>
       <div class="event-desc">7 vows and <span style="font-size: 1.3em; font-weight: 800;">1</span> lifetime ~ where forever begins </div>
     </div>
@@ -916,7 +879,7 @@
 <script>
   // Countdown
   function tick(){
-    var wedding=new Date('2026-12-12T10:00:00');
+    var wedding=new Date('2026-12-13T10:00:00');
     var now=new Date();
     var diff=wedding-now;
     if(diff<0)return;
@@ -946,24 +909,6 @@
     else{audio.play().catch(function(){});note.textContent='⏸';playing=true;}
   }
 
-  // Carousel
-  var currentSlide=0;
-  function updateCarousel(){
-    var track=document.getElementById('carouselTrack');
-    var dots=document.querySelectorAll('.carousel-dot');
-    track.style.transform='translateX(-' + (currentSlide * 100) + '%)';
-    dots.forEach(function(dot,i){
-      dot.classList.toggle('active',i===currentSlide);
-    });
-  }
-  function jumpToSlide(n){
-    currentSlide=n;
-    updateCarousel();
-  }
-  setInterval(function(){
-    currentSlide=(currentSlide + 1) % 3;
-    updateCarousel();
-  }, 5000);
 
   // RSVP Form
   function showRSVPForm(){
