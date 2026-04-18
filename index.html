@@ -116,7 +116,8 @@
   ::-webkit-scrollbar-track{background:var(--ivory)}
   ::-webkit-scrollbar-thumb{background:var(--gold)}
 
-  .hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:10px;letter-spacing:3px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeup 2s infinite;z-index:100}
+  .hero-scroll{display:none}
+  @media(max-width:600px){.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:10px;letter-spacing:3px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeup 2s infinite;z-index:100}}
   .hero-scroll::after{content:'';display:block;width:1px;height:40px;background:rgba(255,255,255,.4)}
 
   @keyframes fadeup{0%,100%{opacity:.4}50%{opacity:.9}}
@@ -201,6 +202,7 @@
   .ganesh-calligraphy{width:auto;height:auto;color:#FFFFFF;font-family:'Playfair Display',serif;letter-spacing:1px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.4))}
   .ganesh-calligraphy svg{width:clamp(300px,70vw,600px);height:auto}
   .shree-img{width:260px;height:auto;mix-blend-mode:multiply;filter:drop-shadow(0 3px 8px rgba(232,82,26,.3));position:absolute;top:calc(50% - 10px);left:50%;transform:translateX(-50%);z-index:3}
+  @media(min-width:601px){.shree-img{top:calc(50% + 60px)}}
   @keyframes fade-down{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
   .corner{position:absolute;width:80px;height:80px;opacity:.25;z-index:1}
   .corner svg{width:100%;height:100%}
@@ -665,9 +667,9 @@
     <strong>Smt. Urmila Ji &amp; Shri. Jayanti Bhai Patel</strong>
   </div>
   <div class="inv-divider"></div>
-  <div class="inv-family" style="font-variant-numeric:lining-nums">
+  <div class="inv-family" style="font-variant-numeric:lining-nums; white-space:nowrap;">
     <strong style="font-weight: 800; font-family: 'Jost', sans-serif;">Date: 13 - 14 December 2026</strong><br/>
-    <strong style="font-weight: 800; font-family: 'Jost', sans-serif;">Vadodara</strong>
+    <strong style="font-weight: 800; font-family: 'Jost', sans-serif; display:inline-block; white-space:nowrap; position:relative; right:10px;">📍 Vadodara</strong>
   </div>
   
 </section>
@@ -681,20 +683,20 @@
 
     <div class="event-card">
       <!-- <span class="event-icon">🪷 Swagat 🪷</span> -->
-      <div class="event-date">13 Dec</div>
+      <div class="event-date">13<sup>th</sup> December 2026</div>
       <div class="event-name" style="font-size: 34px;">🪷 Swagat 🪷</div>
       <div class="event-desc">A warm welcome to our loved ones as we begin the festivities</div>
     </div>
 
     <div class="event-card">
       <!-- <span class="event-icon">Sangeet  🎶</span> -->
-      <div class="event-date">13 Dec</div>
+      <div class="event-date">13<sup>th</sup> December 2026</div>
       <div class="event-name" style="font-size: 34px;">Sangeet  🎶</div>
       <div class="event-desc">Jab pyaar ho filmy toh Sangeet bhi blockbuster hoga </div>
     </div>
 
     <div class="event-card">
-      <div class="event-date">14 Dec</div>
+      <div class="event-date">14<sup>th</sup> December 2026</div>
       <div class="event-name" style="font-size: 34px;">Shaadi - <span style="font-size: 1.2em;">2</span> States <img src="infinity.jpeg" style="height: 1em; vertical-align: middle; margin-left: 4px;"> </div>
       <div class="event-desc">7 vows and <span style="font-size: 1.3em; font-weight: 800;">1</span> lifetime ~ where forever begins </div>
     </div>
