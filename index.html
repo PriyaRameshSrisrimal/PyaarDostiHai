@@ -89,12 +89,15 @@
     inset: 0;
     z-index: 3;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 16px;
     cursor: pointer;
     pointer-events: auto;
     transition: opacity 0.5s ease;
   }
+  .curtain-tap{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);animation:fadeup 2s infinite}
   #curtain-container.open .curtain-trigger {
     opacity: 0;
     pointer-events: none;
@@ -601,6 +604,7 @@
   <div class="curtain-panel curtain-right"></div>
   <div class="curtain-trigger" onclick="openCurtain()">
     <img src="locklogo.jpeg" alt="Logo" class="curtain-logo">
+    <div class="curtain-tap">Tap here</div>
   </div>
 </div>
 
@@ -754,8 +758,9 @@
   <h2 class="section-title"><em>Kindly join us as we begin this new chapter</em></h2><br/><br/>
   <!-- <p class="rsvp-text">We've saved a seat for you in our hearts, and under the royal sky. Come celebrate with us as we begin this new chapter.</p> -->
   <div class="rsvp-center-wrap">
+  <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:clamp(13px,3.8vw,19px);color:var(--text);letter-spacing:0.5px;margin-bottom:24px;white-space:nowrap;">13 December Check-In &nbsp;·&nbsp; 14 December Check-Out</p>
   <div class="rsvp-btn-group">
-    <a class="rsvp-btn" href="javascript:void(0)" onclick="showRSVPForm()">Yes, I'll Be There</a>
+    <a class="rsvp-btn" href="javascript:void(0)" onclick="showRSVPForm()" style="display:flex;flex-direction:column;align-items:center;gap:4px;">Yes, I'll Be There<span style="font-size:11px;font-weight:400;opacity:0.75;letter-spacing:1px;">(Show me flight details)</span></a>
     <a class="rsvp-btn btn-no" href="https://wa.me/919962713500?text=Hi%20Priya%20!%20Sadly,%20I%20won't%20be%20able%20to%20make%20it.%20Wishing%20you%20both%20a%20wonderful%20celebration!" target="_blank">Sadly, I'll miss it</a>
   </div>
 
@@ -767,7 +772,7 @@
       <div class="rsvp-accordion-body">
 
         <details class="flight-coupons">
-          <summary>To make your travel planning easier, here is the recommended flight options </summary>
+          <summary>To make your travel planning easier, Click here for recommended flight options</summary>
           <div class="coupon-content">
             <div class="coupon-section">
               <span class="coupon-date">Outbound Journey Option 1 — Sunday, Dec 13</span>
@@ -811,7 +816,7 @@
           </div>
         </details>
 
-        <p class="flight-share-note">Once booked, send us your flight details <a href="https://forms.gle/iMwfpcZ6TkJooKre9" class="flight-share-link" target="_blank">here</a> and confirm your attendance below.</p>
+        <p class="flight-share-note">Once booked, Click <a href="https://forms.gle/iMwfpcZ6TkJooKre9" class="flight-share-link" target="_blank">here</a> to send us your flight details and confirm your attendance below.</p>
 
       </div>
     </details>
