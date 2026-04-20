@@ -469,7 +469,7 @@
   .rsvp-accordion-body .form-group:first-child{margin-top:16px}
   .flight-share-note{
     font-family:'Jost',sans-serif;
-    font-size:11px;
+    font-size:15px;
     letter-spacing:2px;
     text-transform:uppercase;
     color:var(--gold);
@@ -771,8 +771,8 @@
       <summary>✈ Book Your Flights</summary>
       <div class="rsvp-accordion-body">
 
-        <details class="flight-coupons">
-          <summary>To make your travel planning easier, Click here for recommended flight options</summary>
+        <details class="flight-coupons" open>
+          <summary>To make your travel planning easier, Check recommended flight options</summary>
           <div class="coupon-content">
             <div class="coupon-section">
               <span class="coupon-date">Outbound Journey Option 1 — Sunday, Dec 13</span>
@@ -921,6 +921,8 @@
   function showRSVPForm(){
     var form=document.getElementById('rsvpForm');
     form.style.display='block';
+    var firstAccordion=form.querySelector('.rsvp-accordion');
+    if(firstAccordion) firstAccordion.setAttribute('open','');
     form.scrollIntoView({behavior:'smooth'});
   }
 
